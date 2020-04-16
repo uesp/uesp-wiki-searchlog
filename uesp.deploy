@@ -1,0 +1,18 @@
+name = uesp.wikisearchlog
+description = MediaWiki extension for logging wiki searches.
+repository = https://github.com/uesp/uesp-wiki-searchlog
+backup = false
+verbosity = 0
+
+staged = true
+
+ignore = *.deploy
+ignore = .hg*
+ignore = .git*
+
+dest = content1.uesp.net:/home/uesp/www/w/extensions/SearchLog/
+dest = content2.uesp.net:/home/uesp/www/w/extensions/SearchLog/
+dest = content3.uesp.net:/home/uesp/www/w/extensions/SearchLog/
+destname = [backup]backup1.uesp.net:/home/uesp/www/w/extensions/SearchLog/
+destname = [dev]content3.uesp.net:/home/uesp/dev/www/w/extensions/SearchLog/
+
