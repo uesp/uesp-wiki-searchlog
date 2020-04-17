@@ -7,8 +7,8 @@ class SpecialSearchLog extends SpecialPage {
 	public $summary;
 	public $empty;
 
-        function __construct() {
-                parent::__construct( 'SearchLog' );
+	function __construct() {
+		parent::__construct( 'SearchLog' );
 
 			# TODO: Proper URL of this page
 		$this->pageurl = "/wiki/Special:SearchLog";
@@ -16,22 +16,22 @@ class SpecialSearchLog extends SpecialPage {
 		$this->maxrows = 1000;
 		$this->summary = 0;
 		$this->empty   = 0;
-        }
+	}
  
-        function execute( $par ) {
-                global $wgRequest, $wgOut, $wgUser;
- 
-                $this->setHeaders();
+	function execute( $par ) {
+		global $wgRequest, $wgOut, $wgUser;
+		
+		$this->setHeaders();
 
 		if ( !$wgUser->isAllowed( 'patrol' ) )
 		{
 			$wgOut->permissionRequired( 'patrol' );
-		        return;
+			return;
 		}
 
 		$this->showHeader();
  
-         	$this->summary = $wgRequest->getText('summary');
+		$this->summary = $wgRequest->getText('summary');
 		$this->sortkey = $wgRequest->getText('sort');
 		$this->empty   = $wgRequest->getText('empty');
 
@@ -119,7 +119,7 @@ class SpecialSearchLog extends SpecialPage {
 			$wgOut->addHTML("</tr>\n");
 		}
  
-                $wgOut->addHTML("</table>\n");
+		$wgOut->addHTML("</table>\n");
 	}
 
 	function showLog () 
@@ -215,7 +215,7 @@ class SpecialSearchLog extends SpecialPage {
 		}
 
 		$wgOut->addHTML("</table>\n");
-        }
+	}
 
 }
 

@@ -1,0 +1,18 @@
+
+SearchLog
+Dave Humphrey (dave@uesp.net)
+
+This is a basic MediaWiki extension to log all search queries made on the wiki to the database
+with a simple interface at Special:SearchLog. It is not meant for production and care should be
+taken when using. In particular, the custom searchlog table can get very large on busy wikis and
+should be cleared of older entries regularily (see the clear-searchlog.weekly.sql script).
+
+Installation outside of the UESP.net wiki is not explicitly supported but the general steps are
+as follows:
+
+1. Copy extension to your extensions/SearchLog/ directory.
+2. Run the searchlog.sql script on your wiki database to create the custom tables.
+3. Add the line:
+      require_once( "$IP/extensions/SearchLog/SearchLog.php" );
+   to your LocalSettings.php file.
+4. Test by running some searches and visting your Special:SearchLog page.
